@@ -7,6 +7,64 @@
   <link rel="stylesheet" href="/sign-up-form.css">
 </head>
 <body>
-  
+  <div class="img-container">
+    <div class="logo">
+      <div class="face">
+        <div class="ear"></div>
+        <div class="ear ear-right"></div>
+        <div class="char">Odin</div>
+        <div class="char char-second">Cat</div>
+      </div>
+    </div>
+    <img src="/touann-gatouillat-vergos-hsscTvn6WlQ-unsplash.jpg" alt="asian city in the night">
+    <span>
+      <a href="https://unsplash.com/photos/person-standing-beside-road-during-nightime-hsscTvn6WlQ">Photo by Touann Gatouillat Vergos</a>
+    </span>
+  </div>
+  <div class="wrapper">
+    <h1>Choose your path, choose your future</h1>
+    <form class="form" action="#" method="post">
+      <div class="form-cover">
+        <div class="form-row">
+          <p>
+            <label for="f-name">FIRST NAME</label>
+            <input id="f-name" type="text" name="f-name" required>
+          </p>
+        <p>
+          <label for="l-name">LAST NAME</label>
+          <input id="l-name" type="text" name="l-name" required>
+        </p>
+        </div>
+        <div class="form-row">
+          <p>
+            <label for="email">EMAIL</label>
+            <input id="email" type="email" name="email" required>
+          </p>
+          <p>
+            <label for="tel">PHONE NUMBER</label>
+            <input id="tel" type="tel" name="tel" pattern="[0-9]{10,11}" required>
+          </p>
+        </div>
+        <div class="form-row">
+          <p>
+            <label for="psw">PASSWORD</label>
+            <input id="psw" type="password" name="psw" required>
+          </p>
+          <p>
+            <label for="confirm-psw">CONFIRM PASSWORD</label>
+            <input id="confirm-psw" type="password" name="confirm-psw" required>
+          </p>
+        </div>
+      </div class="form-row">
+      <div class="btn-container">
+        <button class="btn">Create Account</button>
+      </div>
+    </form>
+    <footer>
+      <small>
+        <a href="https://github.com/Daik102/sign-up-form">2025 Daik</a>
+      </small>
+    </footer>
+  </div>
 </body>
 </html>
