@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign-up form</title>
-  <link rel="stylesheet" href="sign-up-form.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <header>
-    <div class="logo">
+  <header class="header">
+    <div class="logo light-blue-mode">
       <div class="char char-left">Odin</div>
       <div class="face">
         <div class="ear"></div>
@@ -17,58 +18,56 @@
       <div class="char">Form</div>
     </div>
   </header>
-  <main>
-    <div class="img-container">
-      <img src="./img/touann-gatouillat-vergos-hsscTvn6WlQ-unsplash.jpg" alt="asian city in the night">
-      <div>
-        <a href="https://unsplash.com/photos/person-standing-beside-road-during-nightime-hsscTvn6WlQ" target="_blank">Photo by Touann Gatouillat Vergos</a>
-      </div>
-    </div>
+  <main class="main">
     <div class="wrapper">
       <form class="form" action="#" method="post">
-        <h1>Choose your path, choose your future</h1>
-        <div class="form-cover">
+        <h1 class="form-header">Choose your path, choose your future</h1>
+        <div class="form-container">
           <div>
             <p>
-              <label for="first-name">FIRST NAME</label>
-              <input id="first-name" type="text" name="first-name" required>
+              <label class="label" for="first-name">FIRST NAME</label>
+              <input class="input" id="first-name" type="text" name="first-name" required>
             </p>
             <p>
-              <label for="last-name">LAST NAME</label>
-              <input id="last-name" type="text" name="last-name" required>
+              <label class="label" for="last-name">LAST NAME</label>
+              <input class="input" id="last-name" type="text" name="last-name" required>
             </p>
           </div>
           <div>
             <p>
-              <label for="email">EMAIL</label>
-              <input id="email" type="email" name="email" required>
+              <label class="label" for="email">EMAIL</label>
+              <input class="input" id="email" type="email" name="email" required>
             </p>
             <p>
-              <label for="tel">PHONE NUMBER</label>
-              <input id="tel" type="tel" name="tel" pattern="[0-9]{10,11}" required>
+              <label class="label" for="tel">PHONE NUMBER</label>
+              <input class="input" id="tel" type="tel" name="tel" pattern="[0-9]{10,11}" required>
             </p>
           </div>
           <div>
             <p>
-              <label for="pw">PASSWORD</label>
-              <input id="pw" type="password" name="pw" pattern=".{4,}" required>
+              <label class="label" for="pw">PASSWORD</label>
+              <input class="input" id="pw" type="password" name="pw" minlength="8" required>
             </p>
             <p>
-              <label for="confirm-pw">CONFIRM PASSWORD</label>
-              <input id="confirm-pw" type="password" name="confirm-pw" pattern=".{4,}" required>
+              <label class="label" for="confirm-pw">CONFIRM PASSWORD</label>
+              <input class="input" id="confirm-pw" type="password" name="confirm-pw" minlength="8" required>
             </p>
           </div>
         </div>
         <div class="btn-container">
-          <button type="button" class="btn">Create Account</button>
+          <button type="button" class="create-btn">Create Account</button>
         </div>
       </form>
     </div>
+    <figure class="img-container">
+      <img class="main-visual" src="./img/touann-gatouillat-vergos-hsscTvn6WlQ-unsplash.jpg" alt="">
+      <figcaption>
+        <a class="photo-link" href="https://unsplash.com/photos/person-standing-beside-road-during-nightime-hsscTvn6WlQ" target="_blank">Photo by Touann Gatouillat Vergos</a>
+      </figcaption>
+    </figure>
   </main>
-  <footer>
-    <small>
-      <a href="https://github.com/Daik102/sign-up-form" target="_blank">2025 Daik</a>
-    </small>
+  <footer class="footer">
+    <a class="portfolio-link" href="https://daik102.github.io/admin-dashboard/" target="_blank">2025 Daik</a>
   </footer>
 </body>
 </html>
