@@ -45,7 +45,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4rem 1.2rem 12rem 0;
+  padding: 4rem 0 12rem;
 }
 
 .logo {
@@ -79,8 +79,8 @@ body {
 .char {
   height: 4rem;
   margin-top: -1rem;
-  font-family: Damion, Arial, Helvetica, sans-serif;
   font-size: 3.4rem;
+  font-family: Damion, Arial, Helvetica, sans-serif;
   color: var(--red-theme);
 }
 
@@ -91,22 +91,22 @@ body {
 .main {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
+  align-items: center;
+  margin-bottom: 1.6rem;
 }
 
-.wrapper {
+.form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 54.4rem;
-  padding: 0 2rem;
   z-index: 1;
 }
 
 .form-header {
   text-align: center;
+  width: 48rem;
   margin-bottom: 2rem;
   padding: 0 2rem;
   font-size: 3.2rem;
@@ -117,8 +117,8 @@ body {
 .form-container {
   margin-bottom: 5.6rem;
   padding: 1.6rem 0;
-  border-radius: 1rem;
   background-image: linear-gradient(var(--black-theme), var(--purple-opacity-theme));
+  border-radius: 1rem;
   box-shadow: 0 1.2rem 1.2rem var(--shadow-theme);
 }
 
@@ -130,7 +130,7 @@ body {
 .form p {
   display: flex;
   flex-direction: column;
-  margin: 1.4rem;
+  margin: 1.2rem 1.4rem;
 }
 
 .label {
@@ -141,7 +141,7 @@ body {
 }
 
 .input {
-  width: 20.8rem;
+  width: 19.6rem;
   padding: 0.6rem 0.8rem;
   font-size: 1.4rem;
   border: 0.1rem solid var(--black-theme);
@@ -160,14 +160,11 @@ body {
   outline: 0.1rem solid var(--purple-theme);
 }
 
-.btn-container {
-  display: flex;
-  justify-content: center;
-}
-
 .create-btn {
-  width: 26rem;
-  padding: 1.2rem 0;
+  display: block;
+  width: 24.8rem;
+  margin: 0 auto;
+  padding: 1.4rem 0;
   font-size: 1.6rem;
   color: var(--light-blue-theme);
   background-color: var(--black-theme);
@@ -240,105 +237,109 @@ body {
 .footer {
   display: flex;
   justify-content: center;
-  padding-bottom: 8rem;
+  padding-bottom: 6rem;
 }
-
+/* For smartphones in portrait mode */
 @media screen and (orientation: portrait) {
-  html {
-    font-size: 5.5px;
-  }
-}
-
-@media screen and (orientation: portrait) and (min-width: 20.01rem) {
   html {
     font-size: 6.5px;
   }
 }
 
-@media screen and (orientation: portrait) and (min-width: 24rem) and (min-height: calc(50rem - 6rem)) {
+@media screen and (orientation: portrait) and (min-width: 22.5em) {
   html {
-    font-size: 7px;
+    font-size: 7.25px;
   }
 }
 
-@media screen and (orientation: portrait) and (min-width: 24rem) and (min-height: calc(54rem - 6rem)) {
+@media screen and (orientation: portrait) and (min-width: 23.4em) {
   html {
     font-size: 7.5px;
   }
 }
 
-@media screen and (orientation: portrait) and (min-width: 48rem) {
+@media screen and (orientation: portrait) and (min-width: 24.3em) {
+  html {
+    font-size: 7.75px;
+  }
+}
+
+@media screen and (orientation: portrait) and (min-width: 25.75em) {
+  html {
+    font-size: 8.25px;
+  }
+}
+
+@media screen and (orientation: portrait) and (min-width: 26.75em) {
   html {
     font-size: 8.5px;
   }
-
-  .wrapper {
-    margin-bottom: -12rem;
-  }
 }
-
-@media screen and (orientation: portrait) and (min-width: 48rem) and (min-height: calc(70rem - 6rem)) {
-  html {
-    font-size: 9px;
-  }
-
-  .wrapper {
-    margin-bottom: -16rem;
-  }
-}
-
-@media screen and (orientation: portrait) and (min-width: 56rem) {
+/* For tablets in portrait mode */
+@media screen and (orientation: portrait) and (min-width: 48em) {
   html {
     font-size: 10px;
   }
-}
 
-@media screen and (orientation: portrait) and (min-width: 64rem) {
-  html {
-    font-size: 11px;
+  .form {
+    margin-bottom: -20rem;
   }
 }
-
+/* For smartphones in landscape mode */
 @media screen and (orientation: landscape) {
-  html {
-    font-size: 5.5px;
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 41rem) {
   html {
     font-size: 6.5px;
   }
 }
 
-@media screen and (orientation: landscape) and (min-width: 47rem) {
+@media screen and (orientation: landscape) and (min-width: 41.6em) {
   html {
-    font-size: 7px;
+    font-size: 7.25px;
   }
 }
 
-@media screen and (orientation: landscape) and (min-width: 53rem) {
+@media screen and (orientation: landscape) and (min-width: 46.25em) {
   html {
     font-size: 7.5px;
   }
 }
 
+@media screen and (orientation: landscape) and (min-width: 50em) {
+  html {
+    font-size: 7.75px;
+  }
+}
+
+@media screen and (orientation: landscape) and (min-width: 52.7em) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media screen and (orientation: landscape) and (min-width: 55.75em) {
+  html {
+    font-size: 8.25px;
+  }
+}
+
+@media screen and (orientation: landscape) and (min-width: 58em) {
+  html {
+    font-size: 8.5px;
+  }
+}
+/* For small tablets in landscape mode */
 @media screen and (orientation: landscape) and (min-width: 64rem) {
   html {
-    font-size: 7px;
+    font-size: 8px;
   }
 
   .header {
-    padding: 4rem 1.2rem 0 0;
+    padding: 4rem 0 0.8rem;
   }
 
   .main {
     flex-direction: row-reverse;
     gap: 3.6rem;
-  }
-
-  .wrapper {
-    width: 57.2rem;
   }
 
   .input {
@@ -354,29 +355,23 @@ body {
   }
 
   .footer {
-    padding-bottom: 4rem;
+    padding-bottom: 3.2rem;
   }
 }
-
-@media screen and (orientation: landscape) and (min-width: 64rem) and (min-height: calc(48rem - 0rem)) {
+/* For middle tablets in landscape mode */
+@media screen and (orientation: landscape) and (min-width: 73.75rem) {
   html {
-    font-size: 7.5px;
+    font-size: 8.25px;
   }
 }
-
-@media screen and (orientation: landscape) and (min-width: 72rem) {
-  html {
-    font-size: 8px;
-  }
-}
-
+/* For large tablets in landscape mode */
 @media screen and (orientation: landscape) and (min-width: 84rem) {
   html {
     font-size: 9px;
   }
 }
-
-@media screen and (orientation: landscape) and (min-width: 90rem) {
+/* For laptops, and desktops */
+@media screen and (orientation: landscape) and (min-width: 96rem) {
   html {
     font-size: 10px;
   }
