@@ -1,90 +1,61 @@
-function handleLogoEnter() {
-  if (logo.classList.contains('light-blue-mode')) {
-    face.classList.add('light-blue-border');
-    chars.forEach((char) => char.classList.add('light-blue-color'));
-    ears.forEach((ear) => ear.classList.add('light-blue-background'));
+function toggleLogoColor() {
+  if (!logo.classList.contains('light-purple-mode')) {
+    face.classList.toggle('light-blue-border');
+    chars.forEach((char) => char.classList.toggle('light-blue-color'));
+    ears.forEach((ear) => ear.classList.toggle('light-blue-background'));
   } else {
-    face.classList.add('light-purple-border');
-    chars.forEach((char) => char.classList.add('light-purple-color'));
-    ears.forEach((ear) => ear.classList.add('light-purple-background'));
+    face.classList.toggle('light-blue-border');
+    face.classList.toggle('light-purple-border');
+    chars.forEach((char) => char.classList.toggle('light-blue-color'));
+    chars.forEach((char) => char.classList.toggle('light-purple-color'));
+    ears.forEach((ear) => ear.classList.toggle('light-blue-background'));
+    ears.forEach((ear) => ear.classList.toggle('light-purple-background'));
   }
 }
 
-function handleLogoLeave() {
-  face.classList.remove('light-blue-border', 'light-purple-border');
-  chars.forEach((char) => char.classList.remove('light-blue-color', 'light-purple-color'));
-  ears.forEach((ear) => ear.classList.remove('light-blue-background', 'light-purple-background'));
+function toggleFormColor() {
+  logo.classList.toggle('light-purple-mode');
+  face.classList.toggle('light-purple-border');
+  chars.forEach((char) => char.classList.toggle('light-purple-color'));
+  ears.forEach((ear) => ear.classList.toggle('light-purple-background'));
+  formHeader.classList.toggle('light-purple-color');
+  labels.forEach((label) => label.classList.toggle('light-purple-color'));
+  inputs.forEach((input) => input.classList.toggle('light-purple-background'));
+  createBtn.classList.toggle('light-purple-color');
 }
 
-function changeNeonColor() {
-  if (logo.classList.contains('light-blue-mode')) {
-    logo.classList.replace('light-blue-mode', 'light-purple-mode');
-    face.classList.add('light-purple-border');
-    chars.forEach((char) => char.classList.add('light-purple-color'));
-    ears.forEach((ear) => ear.classList.add('light-purple-background'));
-    formHeader.classList.add('light-purple-color');
-    labels.forEach((label) => label.classList.add('light-purple-color'));
-    inputs.forEach((input) => input.classList.add('light-purple-background'));
-    createBtn.classList.add('light-purple-color');
-  } else {
-    logo.classList.replace('light-purple-mode', 'light-blue-mode');
-    face.classList.replace('light-purple-border', 'light-blue-border');
-    chars.forEach((char) => char.classList.replace('light-purple-color', 'light-blue-color'));
-    ears.forEach((ear) => ear.classList.replace('light-purple-background', 'light-blue-background'));
-    formHeader.classList.replace('light-purple-color', 'light-blue-color');
-    labels.forEach((label) => label.classList.replace('light-purple-color', 'light-blue-color'));
-    inputs.forEach((input) => input.classList.replace('light-purple-background', 'light-blue-background'));
-    createBtn.classList.replace('light-purple-color', 'light-blue-color');
-  }
+function toggleBtnColor() {
+  createBtn.classList.toggle('create-btn-hover');
 }
 
-function handleBtnEnter() {
-  createBtn.classList.add('create-btn-hover');
-}
+function checkValidity(e) {
+  e.preventDefault();
 
-function handleBtnLeave() {
-  createBtn.classList.remove('create-btn-hover');
-}
-
-function checkValidity() {
   if (createBtn.classList.contains('created-successfully')) {
     return;
   }
 
-  if (firstName.validity.valueMissing) {
-    firstName.reportValidity();
-    return;
-  } else if (lastName.validity.valueMissing) {
-    lastName.reportValidity();
-    return;
-  } else if (email.validity.valueMissing) {
-    email.reportValidity();
-    return;
-  } else if (email.validity.typeMismatch) {
-    email.reportValidity();
-    return;
-  } else if (tel.validity.valueMissing) {
-    tel.reportValidity();
-    return;
-  } else if (tel.validity.patternMismatch) {
-    tel.setCustomValidity('Please fill out a 10 or 11 digit number.');
-    tel.reportValidity();
-    return;
-  } else if (pw.validity.valueMissing) {
-    pw.reportValidity();
-    return;
-  } else if (pw.validity.tooShort) {
-    pw.reportValidity();
-    return;
-  } else if (confirmPw.validity.valueMissing) {
-    confirmPw.reportValidity();
-    return;
-  } else if (confirmPw.validity.tooShort) {
-    confirmPw.reportValidity();
-    return;
-  } else if (pw.value !== confirmPw.value) {
-    confirmPw.setCustomValidity('The confirmed password is different from the original password.');
-    confirmPw.reportValidity();
+  tel.setCustomValidity(tel.validity.patternMismatch ? 'Please fill out a 10 or 11 digit number.' : '');
+  confirmPw.setCustomValidity(pw.value !== confirmPw.value ? 'The confirmed password is different from the original password.' : '');
+
+  // Clear custom validity when it matches
+  tel.addEventListener('input', () => {
+    if (!tel.validity.patternMismatch) {
+      tel.setCustomValidity('');
+    }
+  });
+
+  confirmPw.addEventListener('input', () => {
+    if (confirmPw.value === pw.value) {
+      confirmPw.setCustomValidity('');
+    }
+  });
+
+  const fields = [firstName, lastName, email, tel, pw, confirmPw];
+  const invalidField = fields.find(field => !field.checkValidity());
+
+  if (invalidField) {
+    invalidField.reportValidity();
     return;
   }
 
@@ -108,6 +79,7 @@ const logo = document.querySelector('.logo');
 const chars = document.querySelectorAll('.char');
 const face = document.querySelector('.face');
 const ears = document.querySelectorAll('.ear');
+const form = document.querySelector('.form');
 const formHeader = document.querySelector('.form-header');
 const labels = document.querySelectorAll('.label');
 const inputs = document.querySelectorAll('.input');
@@ -119,9 +91,9 @@ const pw = document.getElementById('pw');
 const confirmPw = document.getElementById('confirm-pw');
 const createBtn = document.querySelector('.create-btn');
 
-logo.addEventListener('mouseenter', handleLogoEnter);
-logo.addEventListener('mouseleave', handleLogoLeave);
-logo.addEventListener('click', changeNeonColor);
-createBtn.addEventListener('mouseenter', handleBtnEnter);
-createBtn.addEventListener('mouseleave', handleBtnLeave);
-createBtn.addEventListener('click', checkValidity);
+logo.addEventListener('mouseenter', toggleLogoColor);
+logo.addEventListener('mouseleave', toggleLogoColor);
+logo.addEventListener('click', toggleFormColor);
+createBtn.addEventListener('mouseenter', toggleBtnColor);
+createBtn.addEventListener('mouseleave', toggleBtnColor);
+form.addEventListener('submit', checkValidity);
