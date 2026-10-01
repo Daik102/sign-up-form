@@ -11,7 +11,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: ZenDots, Arial, sans-serif;
+  font-family: var(--main-font);
 }
 
 :root {
@@ -27,17 +27,19 @@
   --green-theme: rgb(0, 225, 0);
   --green-opacity-theme: rgba(0, 225, 0, 0.5);
   --white-theme: aliceblue;
+  --main-font: ZenDots, Arial, sans-serif;
+  --logo-font: Damion, Arial, Helvetica, sans-serif;
 }
 
 html {
-  font-size: 10px;
+  font-size: 50%;
 }
 
 body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--black-theme);
 }
 
@@ -80,7 +82,7 @@ body {
   height: 4rem;
   margin-top: -1rem;
   font-size: 3.4rem;
-  font-family: Damion, Arial, Helvetica, sans-serif;
+  font-family: var(--logo-font);
   color: var(--red-theme);
 }
 
@@ -94,6 +96,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 1.6rem;
+  padding: 0 1.2rem;
 }
 
 .form {
@@ -101,21 +104,22 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  max-width: 48rem;
   z-index: 1;
 }
 
 .form-header {
   text-align: center;
-  width: 48rem;
   margin-bottom: 2rem;
-  padding: 0 2rem;
-  font-size: 3.2rem;
+  padding: 0 1.2rem;
+  font-size: 2.8rem;
   line-height: 1.4;
   color: var(--light-blue-theme);
 }
 
 .form-container {
-  margin-bottom: 5.6rem;
+  margin-bottom: 5.2rem;
   padding: 1.6rem 0;
   background-image: linear-gradient(var(--black-theme), var(--purple-opacity-theme));
   border-radius: 1rem;
@@ -130,18 +134,19 @@ body {
 .form p {
   display: flex;
   flex-direction: column;
-  margin: 1.2rem 1.4rem;
+  margin: 1.2rem;
 }
 
 .label {
   padding-bottom: 0.8rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--light-blue-theme);
   cursor: pointer;
 }
 
 .input {
-  width: 19.6rem;
+  width: 100%;
+  max-width: 18rem;
   padding: 0.6rem 0.8rem;
   font-size: 1.4rem;
   border: 0.1rem solid var(--black-theme);
@@ -162,9 +167,8 @@ body {
 
 .create-btn {
   display: block;
-  width: 24.8rem;
   margin: 0 auto;
-  padding: 1.4rem 0;
+  padding: 1.4rem 2.8rem;
   font-size: 1.6rem;
   color: var(--light-blue-theme);
   background-color: var(--black-theme);
@@ -207,24 +211,14 @@ body {
   background-image: linear-gradient(var(--green-theme), var(--green-opacity-theme));
 }
 
-.img-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .main-visual {
-  width: 100%;
+  max-width: 48rem;
   height: auto;
-}
-
-.img-container figcaption {
-  margin-top: -4rem;
 }
 
 .photo-link,
 .portfolio-link {
-  font-size: 1.4rem;
+  font-size: 1.28rem;
   color: var(--red-theme);
   text-decoration: none;
 }
@@ -236,103 +230,32 @@ body {
 
 .footer {
   display: flex;
-  justify-content: center;
-  padding-bottom: 6rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  padding-bottom: 4rem;
 }
-/* For smartphones in portrait mode */
-@media screen and (orientation: portrait) {
+
+/* Middle and Large Smartphones in portrait */
+@media screen and (orientation: portrait) and (min-width: 24.25em) {
   html {
-    font-size: 6.5px;
+    font-size: 56.25%;
   }
 }
 
-@media screen and (orientation: portrait) and (min-width: 22.5em) {
-  html {
-    font-size: 7.25px;
-  }
-}
-
-@media screen and (orientation: portrait) and (min-width: 23.4em) {
-  html {
-    font-size: 7.5px;
-  }
-}
-
-@media screen and (orientation: portrait) and (min-width: 24.3em) {
-  html {
-    font-size: 7.75px;
-  }
-}
-
-@media screen and (orientation: portrait) and (min-width: 25.75em) {
-  html {
-    font-size: 8.25px;
-  }
-}
-
-@media screen and (orientation: portrait) and (min-width: 26.75em) {
-  html {
-    font-size: 8.5px;
-  }
-}
-/* For tablets in portrait mode */
+/* Tablets in portrait */
 @media screen and (orientation: portrait) and (min-width: 48em) {
   html {
-    font-size: 10px;
+    font-size: 62.5%;
   }
 
-  .form {
-    margin-bottom: -20rem;
-  }
-}
-/* For smartphones in landscape mode */
-@media screen and (orientation: landscape) {
-  html {
-    font-size: 6.5px;
+  .form-header {
+    font-size: 3rem;
   }
 }
 
-@media screen and (orientation: landscape) and (min-width: 41.6em) {
-  html {
-    font-size: 7.25px;
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 46.25em) {
-  html {
-    font-size: 7.5px;
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 50em) {
-  html {
-    font-size: 7.75px;
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 52.7em) {
-  html {
-    font-size: 8px;
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 55.75em) {
-  html {
-    font-size: 8.25px;
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 58em) {
-  html {
-    font-size: 8.5px;
-  }
-}
-/* For small tablets in landscape mode */
-@media screen and (orientation: landscape) and (min-width: 64rem) {
-  html {
-    font-size: 8px;
-  }
-
+/* Tablets in landscape */
+@media screen and (orientation: landscape) and (min-width: 64em){
   .header {
     padding: 4rem 0 0.8rem;
   }
@@ -342,37 +265,26 @@ body {
     gap: 3.6rem;
   }
 
+  .form-header {
+    font-size: 3rem;
+  }
+
   .input {
-    width: 22rem;
+    max-width: 20rem;
   }
 
   .img-container {
     margin-top: -6rem;
   }
 
-  .main-visual {
-    width: 60rem;
-  }
-
   .footer {
     padding-bottom: 3.2rem;
   }
 }
-/* For middle tablets in landscape mode */
-@media screen and (orientation: landscape) and (min-width: 73.75rem) {
+
+/* Large Tablets in landscape and Desktops */
+@media screen and (orientation: landscape)  and (min-width: 85.375em){
   html {
-    font-size: 8.25px;
-  }
-}
-/* For large tablets in landscape mode */
-@media screen and (orientation: landscape) and (min-width: 84rem) {
-  html {
-    font-size: 9px;
-  }
-}
-/* For laptops, and desktops */
-@media screen and (orientation: landscape) and (min-width: 96rem) {
-  html {
-    font-size: 10px;
+    font-size: 68.75%;
   }
 }
