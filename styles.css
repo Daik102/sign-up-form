@@ -11,7 +11,6 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: var(--main-font);
 }
 
 :root {
@@ -33,6 +32,12 @@
 
 html {
   font-size: 50%;
+  font-family: var(--main-font);
+}
+
+input,
+button {
+  font-family: inherit;
 }
 
 body {
@@ -211,8 +216,13 @@ body {
   background-image: linear-gradient(var(--green-theme), var(--green-opacity-theme));
 }
 
-.main-visual {
+.img-container {
   max-width: 48rem;
+  margin-top: -6rem;
+}
+
+.main-visual {
+  width: 100%;
   height: auto;
 }
 
@@ -271,10 +281,6 @@ body {
 
   .input {
     max-width: 20rem;
-  }
-
-  .img-container {
-    margin-top: -6rem;
   }
 
   .footer {
